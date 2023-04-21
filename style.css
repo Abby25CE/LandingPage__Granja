@@ -9,7 +9,9 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
-
+body{
+	padding: 0%;
+}
 a {
 	text-decoration: none;
 }
@@ -321,9 +323,9 @@ h2 {
 }
 
 .social-icons {
-	padding-left: 0;
+	padding-left: 0 0 0 0 ;
 	margin-bottom: 0;
-	list-style: none
+	list-style: none;
 }
 
 .social-icons li {
@@ -395,13 +397,13 @@ h2 {
 
 /*Mapa*/
 .map-responsive {
-	overflow: hidden;
-	padding-bottom: 350px;
-	position: relative;
-	height: 10px;
+	float: right;
+	order: 2;
+	padding: 0 15px 0 15px;
+	border: 0;
 }
-
+/*
 .map-responsive iframe {
-	
-	position: absolute;
+	/*position: absolute;
+	float: right;
 }
