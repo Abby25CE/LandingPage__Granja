@@ -392,3 +392,16 @@ h2 {
 		font-weight: 600
 	}
 }
+
+/*Mapa*/
+.map-responsive {
+	overflow: hidden;
+	padding-bottom: 350px;
+	position: relative;
+	height: 10px;
+}
+
+.map-responsive iframe {
+	
+	position: absolute;
+}
