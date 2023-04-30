@@ -9,9 +9,11 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
-body{
+
+body {
 	padding: 0%;
 }
+
 a {
 	text-decoration: none;
 }
@@ -78,7 +80,7 @@ nav ul li:hover {
 /* HEAD SECTION */
 
 main {
-	background: url(https://cdn0.bodas.com.mx/vendor/3176/3_2/960/png/b-1.jpeg);
+	background: url("img/Fondo.jpeg");
 	background-size: cover;
 	background-attachment: fixed;
 	padding: 50px;
@@ -126,25 +128,21 @@ h2 {
 /* Estilo de las tarjetas */
 .card {
 	background: #ffffff;
-	position: relative;
 	color: #000000;
-	margin: 20px;
-	padding: 20px 35px 1px;
+	padding: 20px 0 1px 35px;
 	max-width: 300px;
 	font-family: "Open Sans", sans-serif;
 	font-size: 1.1em;
-	line-height: 1.6;
 	border: 1px solid rgba(0, 0, 0, .12);
 	border-radius: 3px;
 	box-shadow: 1px 1px 6px rgba(0, 0, 0, .2);
-	box-sizing: border-box;
 	overflow: hidden;
 	height: 450px;
 }
 
 .imagen {
 	height: 81.4%;
-
+	float: right;
 }
 
 /*Cursos*/
@@ -181,8 +179,6 @@ h2 {
 	max-width: 550px;
 	text-align: center;
 }
-
-
 
 .overlay {
 	width: 100%;
@@ -323,7 +319,7 @@ h2 {
 }
 
 .social-icons {
-	padding-left: 0 0 0 0 ;
+	padding-left: 0 0 0 0;
 	margin-bottom: 0;
 	list-style: none;
 }
@@ -402,6 +398,7 @@ h2 {
 	padding: 0 15px 0 15px;
 	border: 0;
 }
+
 /*
 .map-responsive iframe {
 	/*position: absolute;
