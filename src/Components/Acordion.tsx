@@ -1,16 +1,18 @@
 "use client";
-import { FiBarChart, FiBell, FiDollarSign, FiPlay } from "react-icons/fi";
+import { FiPlay } from "react-icons/fi";
 import { Dispatch, SetStateAction, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWindowSize } from "@/Hooks/useWindows";
 import { IconType } from "react-icons";
-
+import { MdEventAvailable } from "react-icons/md";
+import { IoSchoolSharp } from "react-icons/io5";
+import { GiPartyFlags } from "react-icons/gi";
 const VerticalAccordion = () => {
   const [open, setOpen] = useState(items[0].id);
 
   return (
-    <section className="p-4 bg-indigo-600">
-      <div className="flex flex-col lg:flex-row h-fit lg:h-[450px] w-full max-w-6xl mx-auto shadow overflow-hidden">
+    <section className="max-h-screen py-9 ">
+      <div className="flex flex-col lg:flex-row h-fit lg:h-[450px] w-full max-w-[76rem] mx-auto shadow overflow-hidden">
         {items.map((item) => {
           return (
             <Panel
@@ -21,7 +23,6 @@ const VerticalAccordion = () => {
               Icon={item.Icon}
               title={item.title}
               imgSrc={item.imgSrc}
-              description={item.description}
             />
           );
         })}
@@ -37,18 +38,9 @@ interface PanelProps {
   Icon: IconType;
   title: string;
   imgSrc: string;
-  description: string;
 }
 
-const Panel = ({
-  open,
-  setOpen,
-  id,
-  Icon,
-  title,
-  imgSrc,
-  description,
-}: PanelProps) => {
+const Panel = ({ open, setOpen, id, Icon, title, imgSrc }: PanelProps) => {
   const { width } = useWindowSize();
   const isOpen = open === id;
 
@@ -62,11 +54,11 @@ const Panel = ({
           style={{
             writingMode: "vertical-lr",
           }}
-          className="hidden lg:block text-xl font-light rotate-180"
+          className="hidden lg:block text-xl font-light rotate-180 text-gray-700"
         >
           {title}
         </span>
-        <span className="block lg:hidden text-xl font-light">{title}</span>
+        <span className=" block lg:hidden text-xl font-light">{title}</span>
         <div className="w-6 lg:w-full aspect-square bg-indigo-600 text-white grid place-items-center">
           <Icon />
         </div>
@@ -94,9 +86,7 @@ const Panel = ({
               animate="open"
               exit="closed"
               className="px-4 py-2 bg-black/40 backdrop-blur-sm text-white"
-            >
-              <p>{description}</p>
-            </motion.div>
+            ></motion.div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -142,38 +132,26 @@ const descriptionVariants = {
 const items = [
   {
     id: 1,
-    title: "Earn more",
-    Icon: FiDollarSign,
-    imgSrc:
-      "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+    title: "Eventos",
+    Icon: MdEventAvailable,
+    imgSrc: "https://i.postimg.cc/1Rj8R0mc/Imagen4.jpg",
   },
   {
     id: 2,
-    title: "Play more",
+    title: "Cursos",
     Icon: FiPlay,
-    imgSrc:
-      "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+    imgSrc: "https://i.postimg.cc/NMV2nRL4/Imagen1.jpg",
   },
   {
     id: 3,
-    title: "Keep track",
-    Icon: FiBell,
-    imgSrc:
-      "https://images.unsplash.com/photo-1578450671530-5b6a7c9f32a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+    title: "Clases Privadas",
+    Icon: IoSchoolSharp,
+    imgSrc: "https://i.postimg.cc/HsF3M72b/Imagen3.jpg",
   },
   {
     id: 4,
-    title: "Grow faster",
-    Icon: FiBarChart,
-    imgSrc:
-      "https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+    title: "Fiestas",
+    Icon: GiPartyFlags,
+    imgSrc: "https://i.postimg.cc/nz1wYczp/Imagen2.jpg",
   },
 ];
